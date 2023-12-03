@@ -1,0 +1,7 @@
+For live data (we can use these)
+1 - web sockets - It is a two way connection . like there is server and UI so so to transfer data on both side. it is a type of handshaking  . it is birdirectional 
+Here no regual interval 
+
+2- API Polling - UI request the server and data flow from server to UI . It is one directional and after an interval 
+
+YouTube comments live chat uses api polling 
