@@ -1,6 +1,6 @@
 const GOOGLE_API_KEY = "AIzaSyC1H-gARZVmp4cdWnjGsVEoWjMd4NvDQuc";
 
-export const Recommendations_API = `https://youtube.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&maxResults=25&regionCode=in&key=${GOOGLE_API_KEY}&channelId=`;
+export const Recommendations_API = `https://www.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&maxResults=25&regionCode=in&key=${GOOGLE_API_KEY}&channelId=`;
 
 export const YOUTUBE_VIDEOS_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" + GOOGLE_API_KEY;
 

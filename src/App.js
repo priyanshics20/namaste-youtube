@@ -7,9 +7,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainContainer from './components/MainContainer';
 import WatchPage from './components/WatchPage';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
 
 const appRouter = createBrowserRouter([
   {
@@ -30,16 +27,15 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
-    <div>
-      <Head />
-      <RouterProvider router={appRouter}/>
+      <div>
+        <Head />
+        <RouterProvider router={appRouter}/>
       </div>
-      </Provider>
+    </Provider>
   );
 }
 
 export default App;
-library.add(fas, far)
 
 /**
  * Header 

@@ -2,11 +2,10 @@ import React ,{useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMenu } from '../utils/appSlice';
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {GoSearch} from "react-icons/go"
 // import { store } from '../utils/store';
 import { cacheResults } from '../utils/searchSlice';
 import { FaUserCircle } from "react-icons/fa";
-
 
 const Head = () => {
   // input
@@ -85,18 +84,21 @@ const Head = () => {
               onFocus={() => { setShowSuggestions(true) }}
               onBlur={()=>{setShowSuggestions(false)}}
             />
-            <button className='rounded-r-full p-5 py-1 shadow-inner border border-gray-300 hover:border-gray-400 bg-gray-100 focus:outline-none '>
-              <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+            <button className='rounded-r-full p-5 py-1 shadow-inner border border-gray-300 hover:border-gray-400 bg-gray-100 focus:outline-none'>
+              <GoSearch className='text-xl max-sm:mt-1'/>
             </button>
 
             <div className='fixed bg-transparent pt-10 '>  
               {
                 showSuggestions && ( suggestions.map((s) => (
-                  <p key={s}
+                  <div
+                    key={s}
                     className='hover:bg-stone-100 bg-white w-96 py-2 px-2 shadow-md'>
-                        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass"/>
-                        &nbsp;&nbsp;{s}
-                  </p>
+                    <div className='flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center'>
+                      <GoSearch className='text-lg m-2 mr-4' />
+                      <span className='mb-1'>{s}</span>
+                    </div>
+                  </div>
                       
                 ))
                 )

@@ -1,4 +1,4 @@
-export const PublishedTimeOfVideo = (publishedAt) => {
+export const publishedTimeOfVideo = (publishedAt) => {
     const publishedDate = new Date(publishedAt);
     const currentDate = new Date();
 
@@ -14,8 +14,8 @@ export const PublishedTimeOfVideo = (publishedAt) => {
             );
         }
         else {
-            if (currentDate.getDate() - publishedDate.getDate() == 0) return "Today";
-            if (currentDate.getDate() - publishedDate.getDate() == 1) return "1 day ago";
+            if (currentDate.getDate() - publishedDate.getDate() === 0) return "Today";
+            if (currentDate.getDate() - publishedDate.getDate() === 1) return "1 day ago";
 
             else {
                 return (

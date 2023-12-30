@@ -5,7 +5,7 @@ import { BiDislike, BiLike } from 'react-icons/bi';
 import { PiShareFatThin } from "react-icons/pi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { abbreviateNumber } from 'js-abbreviation-number';
-import { PublishedTimeOfVideo } from '../utils/PublishedTimeOfVideo';
+import { publishedTimeOfVideo } from '../utils/publishedTimeOfVideo';
 import VideoCommentContainer from './VideoCommentContainer';
 
 
@@ -67,7 +67,7 @@ const WpageVideoDetails = ({ videoId }) => {
                 <div className='lg:flex '>
                     <p className='flex'><span className='font-semibold mr-2 text-sm'>{abbreviateNumber(viewCount)} views</span></p>
 
-                    <p className='font-semibold lg:ml-2 text-sm'>{PublishedTimeOfVideo(publishedAt)}</p>
+                    <p className='font-semibold lg:ml-2 text-sm'>{publishedTimeOfVideo(publishedAt)}</p>
                     {/* tags */}
                     {tags!=null && tags.length>0 && 
                     <p className='lg:ml-2 text-blue-800'>{ `#${tags[0]} `}</p>

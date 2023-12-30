@@ -20,7 +20,7 @@ const Recommendation = () => {
         const data = await fetch(Recommendations_API + channelId);
         const json = await data.json();
         setRecVideoList(json?.items);
-        console.log(json?.items);
+        // console.log(json?.items);
     }
 
     return recVideoList == null ? <div>
@@ -35,9 +35,10 @@ const Recommendation = () => {
             <ShimmerRecommendatioUI />
             <ShimmerRecommendatioUI />
         </div> : (
-        <div>
+            <div>
+                {/* recommended video list */ }
                 {
-                    // recVideoList.map((recvideo, index) => <Link to={"watch?v="+recvideo?.contentDetails?.upload?.videoId} key={index}> <RecommendedVideo data={recvideo}/> </Link>)
+                    recVideoList.map((recvideo, index) => <Link to={"/watch?v="+recvideo?.contentDetails?.upload?.videoId} key={index}> <RecommendedVideo data={recvideo}/> </Link>)
                 }
         </div>
     )
