@@ -45,7 +45,7 @@ const VideoContainer = () => {
   return (
     <div className='flex flex-wrap justify-center'>
       {videos.map((video, index )=> (
-        <Link to={"/watch?v=" + video.id} key={video.id + index}
+        <Link to={"/watch?v=" + video?.id} key={video?.id + index}
           // setting up the channelId in redux to access in watch page (for recommendations)
           onClick={() =>  dispatcher(setChannelId(video?.snippet?.channelId)) }
         >

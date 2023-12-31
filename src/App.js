@@ -3,25 +3,36 @@ import Body from './components/Body';
 import Head from './components/Head';
 import { Provider } from 'react-redux';
 import store from './utils/store';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter , Router, Outlet } from 'react-router-dom';
 import MainContainer from './components/MainContainer';
 import WatchPage from './components/WatchPage';
+import { lazy, Suspense } from 'react';
 
+const SearchResultsPage = lazy(()=> import('../src/components/SearchResultsPage'));
 
-const appRouter = createBrowserRouter([
+export const appRouter = createBrowserRouter([
   {
     path: '/',
-    element: <Body />,
-    children: [
-      {
-        path: '/',
-        element: <MainContainer/>
-      },
-      {
-        path: 'watch',
-        element: <WatchPage/>
-      }
-    ]
+    element: <App />,
+    errorElement:<></>,
+    children:[{
+      path: '/',
+      element: <Body />,
+      children: [
+        {
+          path: '/',
+          element: <MainContainer/>
+        },
+        {
+          path: 'watch',
+          element: <WatchPage/>
+        },
+        {
+          path: 'search',
+          element: <Suspense> <SearchResultsPage/> </Suspense>
+        }
+      ]
+    }]
   }
 ])
 function App() {
@@ -29,7 +40,7 @@ function App() {
     <Provider store={store}>
       <div>
         <Head />
-        <RouterProvider router={appRouter}/>
+        <Outlet/>
       </div>
     </Provider>
   );
