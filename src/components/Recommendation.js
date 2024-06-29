@@ -35,7 +35,7 @@ const Recommendation = () => {
             <ShimmerRecommendatioUI />
             <ShimmerRecommendatioUI />
         </div> : (
-            <div>
+            <div className='hover:bg-gray-950'>
                 {/* recommended video list */ }
                 {
                     recVideoList.map((recvideo, index) => <Link to={"/watch?v="+recvideo?.contentDetails?.upload?.videoId} key={index}> <RecommendedVideo data={recvideo}/> </Link>)

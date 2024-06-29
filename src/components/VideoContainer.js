@@ -32,14 +32,18 @@ const VideoContainer = () => {
   }, []);
 
   const getVideos = async() =>{
-    const data = await fetch(YOUTUBE_VIDEOS_API);
-    const json = await data.json();
-    // console.log(json);
-    // console.log(json.items);
-    var updatedData=videos.concat(json.items);
-    setVideos(updatedData);
-    // setVideos(json.items);
-    setScrollDown(false);
+    try {
+      const data = await fetch(YOUTUBE_VIDEOS_API);
+      const json = await data.json();
+      // console.log(json);
+      // console.log(json.items);
+      var updatedData=videos.concat(json.items);
+      setVideos(updatedData);
+      // setVideos(json.items);
+      setScrollDown(false);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

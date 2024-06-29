@@ -4,7 +4,7 @@ import { ChannelImage_API } from "../utils/constants";
 
 const VideoCard = ({ info }) => {
     const [channelImage,setChannelImage]=useState("");
-    console.log(info);
+    // console.log(info);
     const { snippet , statistics } = info;
     const { channelTitle, channelId ,title, thumbnails } = snippet;
     // console.log(snippet);

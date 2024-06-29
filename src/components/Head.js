@@ -136,6 +136,10 @@ const Head = () => {
                 <div
                   key={s}
                   className="hover:bg-stone-100 bg-white w-96 py-2 px-2 shadow-md"
+                  onMouseDown={() => {
+                    setSearchQuery(s);
+                    setShowSuggestions(false);
+                  }}
                 >
                   <div className="flex lg:w-[23rem] lg:mr-[8.3rem] px-5 items-center">
                     <GoSearch className="text-lg m-2 mr-4" />
